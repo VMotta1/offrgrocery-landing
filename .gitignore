@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.vercel/
+.vercel/output/
+
+# Misc
+coverage/
+*.swp
+
+# Ignore any unrelated nested repos (if present)
+Fridge Buddy/Code/Grocery-AI-Project/
+School/Fall 2024 Mcgill/321 F24/ECSE321 Group 1/project-group-1/
+Winter 2025 mcgill/ECSE 428/ECSE428_Repo/ECSE-428-Grp-8/

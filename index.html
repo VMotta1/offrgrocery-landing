@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OFFR - The Smart Way To Shop And Save</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo-container">
+      <img src="./offrlogo.png" alt="OFFR Logo" class="logo">
+    </div>
+    <div class="nav-container">
+      <a href="#" class="logo brand-container">
+        <img src="./offrlogo.png" alt="O" class="logo-letter">
+        <span>OFFR</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#faq" style="color:white; text-decoration: none; margin-right: 1rem;">FAQ</a>
+        <a href="#" class="download-btn">Download app</a>
+        <div class="lang-switcher">
+          <a href="#" class="active">EN</a>
+          <a href="#">FR</a>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <div class="leaf leaf1"></div>
+    <div class="leaf leaf2"></div>
+    <div class="leaf leaf3"></div>
+
+    <div class="hero-content">
+      <h1>
+        <span>The Smart Way</span><br/>
+        <span>To Shop And Save</span>
+      </h1>
+
+      <div class="contact-section" id="how-it-works">
+        <h2>Contact Us</h2>
+
+        <!-- NOTE: No local storage; posts securely to /api/contact -->
+        <form class="contact-form" id="contactForm" autocomplete="off" novalidate>
+          <input type="text" name="name" placeholder="Name" class="form-input" required minlength="2"/>
+          <input type="email" name="email" placeholder="Email" class="form-input" required/>
+
+          <!-- Honeypot (bots fill this; humans won’t see it) -->
+          <input type="text" name="company" tabindex="-1" autocomplete="off"
+                 style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true"/>
+
+          <button type="submit" class="notify-btn">Notify Me</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <section id="about" style="height:70vh"></section>
+  <section id="blog" style="height:70vh"></section>
+  <section id="faq" style="height:70vh"></section>
+
+  <div class="chat-widget" aria-label="Open chat">
+    <div class="chat-icon">💬</div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

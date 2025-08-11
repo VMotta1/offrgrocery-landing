@@ -1,0 +1,184 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden; /* prevents scrolling in any direction */
+  background: linear-gradient(135deg, #4a7c59 0%, #2d5a3d 100%);
+  height: 100vh; /* lock height to viewport */
+}
+
+/* Navigation */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+nav.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); }
+
+.nav-container {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1200px; margin: 0 auto;
+}
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: white; text-decoration: none; font-weight: 500; transition: all 0.3s ease; position: relative;
+}
+nav.scrolled .nav-links a { color: #2d5a3d; }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #9acd32; transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.logo { font-size: 1.8rem; font-weight: 800; color: white; text-decoration: none; letter-spacing: 1px; }
+nav.scrolled .logo { color: #2d5a3d; }
+
+.nav-right { display: flex; gap: 1rem; align-items: center; }
+
+.download-btn {
+  background: #9acd32; color: #2d5a3d; padding: 0.7rem 1.5rem; border: none; border-radius: 25px;
+  font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block;
+}
+.download-btn:hover {
+  background: #8bc34a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(154, 205, 50, 0.4);
+}
+
+.lang-switcher { display: flex; gap: 0.5rem; }
+.lang-switcher a {
+  color: white; text-decoration: none; font-weight: 500; padding: 0.3rem 0.5rem; border-radius: 4px; transition: all 0.3s ease;
+}
+nav.scrolled .lang-switcher a { color: #2d5a3d; }
+.lang-switcher a:hover, .lang-switcher a.active { background: rgba(154, 205, 50, 0.2); }
+
+/* Hero Section */
+.hero {
+  height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(154,205,50,0.1)"/><stop offset="100%" stop-color="rgba(154,205,50,0)"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23grad1)"/><circle cx="80" cy="30" r="1.5" fill="url(%23grad1)"/><circle cx="30" cy="70" r="1" fill="url(%23grad1)"/><circle cx="70" cy="80" r="2.5" fill="url(%23grad1)"/></svg>') repeat;
+  animation: float 20s infinite ease-in-out;
+}
+@keyframes float { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-20px) rotate(180deg)} }
+
+.hero-content { position: relative; z-index: 10; max-width: 900px; padding: 0 2rem; }
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 8rem); color: white; font-weight: 900; text-transform: uppercase; line-height: 0.9;
+  margin-bottom: 2rem; text-shadow: 0 4px 20px rgba(0,0,0,0.3); letter-spacing: 2px; animation: fadeInUp 1s ease-out;
+}
+@keyframes fadeInUp { from{opacity:0; transform:translateY(50px)} to{opacity:1; transform:translateY(0)} }
+
+.contact-section { margin-top: 3rem; animation: fadeInUp 1s ease-out 0.5s both; text-align: center; }
+.contact-section h2 { color: white; font-size: 2.5rem; font-weight: 400; margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+
+.contact-form {
+  display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 400px; margin: 0 auto;
+}
+.form-input {
+  width: 100%; padding: 1rem 1.5rem; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 8px; color: white; font-size: 1.1rem; backdrop-filter: blur(10px); transition: all 0.3s ease;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.7); }
+.form-input:focus {
+  outline: none; border-color: #9acd32; background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 20px rgba(154,205,50,0.3); transform: translateY(-2px);
+}
+.notify-btn {
+  width: 100%; padding: 1rem 2rem; background: #2e5cb8; color: white; border: none; border-radius: 8px;
+  font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(46,92,184,0.4);
+}
+.notify-btn:hover { background: #3d6bc7; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(46,92,184,0.6); }
+.notify-btn:active { transform: translateY(-1px); }
+
+/* Decorative Elements */
+.leaf { position: absolute; opacity: 0.6; animation: floatLeaf 15s infinite ease-in-out; }
+.leaf1 { top: 20%; left: 10%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(154,205,50,0.3) 0%, rgba(154,205,50,0.1) 70%); border-radius: 50% 0 50% 50%; }
+.leaf2 { top: 60%; right: 10%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(154,205,50,0.2) 0%, rgba(154,205,50,0.05) 70%); border-radius: 50% 50% 0 50%; }
+.leaf3 { bottom: 20%; left: 15%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(154,205,50,0.25) 0%, rgba(154,205,50,0.08) 70%); border-radius: 50% 50% 50% 0; }
+@keyframes floatLeaf {
+  0%,100%{transform:translateY(0) rotate(0) scale(1)}
+  25%{transform:translateY(-30px) rotate(5deg) scale(1.1)}
+  50%{transform:translateY(-15px) rotate(-3deg) scale(0.95)}
+  75%{transform:translateY(-40px) rotate(2deg) scale(1.05)}
+}
+
+.brand-container {
+  display: flex !important;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 24px; /* Adjust to match your existing OFFR size */
+}
+
+.logo-letter {
+  height: 2.5em; /* This will scale with the text size */
+  width: auto;
+  margin-right: 10px; /* Small gap between logo and "FFR" */
+  vertical-align: baseline;
+}
+
+/* Remove the separate logo container since we're integrating it */
+.logo-container {
+  display: none;
+}
+
+/* Chat Widget */
+.chat-widget {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
+  background: #2e5cb8; color: white; width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(46,92,184,0.4); transition: all 0.3s ease; animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%{ box-shadow: 0 4px 20px rgba(46,92,184,0.4) }
+  50%{ box-shadow: 0 4px 30px rgba(46,92,184,0.6) }
+  100%{ box-shadow: 0 4px 20px rgba(46,92,184,0.4) }
+}
+.chat-widget:hover { transform: scale(1.1); background: #3d6bc7; }
+.chat-icon { font-size: 1.5rem; }
+
+/* Mobile Navigation */
+.mobile-menu-btn { display: none; flex-direction: column; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.mobile-menu-btn span { width: 25px; height: 3px; background: white; margin: 2px 0; transition: 0.3s; border-radius: 2px; }
+nav.scrolled .mobile-menu-btn span { background: #2d5a3d; }
+
+/* Notification */
+.notification {
+  position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 1rem 1.5rem;
+  border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 10000; font-weight: 500;
+  transform: translateX(400px); transition: transform 0.3s ease; max-width: 300px; word-wrap: break-word;
+}
+.notification.error { background: #f44336; }
+.notification.info { background: #2196F3; }
+.notification.warning { background: #ff9800; }
+
+@keyframes ripple { to { transform: scale(2); opacity: 0; } }
+@keyframes slideIn { from { transform: translateX(400px) } to { transform: translateX(0) } }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+    flex-direction: column; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .nav-links.active { display: flex; }
+  .nav-links a { color: #2d5a3d; padding: 0.5rem 0; }
+  .mobile-menu-btn { display: flex; }
+  .nav-right { gap: 0.5rem; }
+  .download-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  .hero { padding-top: 80px; }
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 6rem); }
+  .contact-section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+  .contact-form { max-width: 300px; gap: 0.8rem; }
+  .form-input { padding: 0.8rem 1.2rem; font-size: 1rem; }
+  .form-input::placeholder { font-size: 1rem; }
+  .notify-btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+  .leaf1, .leaf2, .leaf3 { display: none; }
+}
