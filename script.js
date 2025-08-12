@@ -325,3 +325,4 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('beforeunload', () => {
   document.querySelectorAll('[data-floating]').forEach(el => el.remove());
 });
+// redeploy
