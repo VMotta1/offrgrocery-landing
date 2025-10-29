@@ -1,95 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OFFR - The Smart Way To Shop And Save</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/png" href="./offrlogo.png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OFFR - The Smart Way To Shop And Save</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="icon" type="image/png" href="./offrlogo.png" />
 </head>
 <body>
-  <nav id="navbar">
-    <div class="logo-container">
-      <img src="./offrgrocerylogo.png" alt="OFFR Logo" class="logo">
-    </div>
-    <div class="nav-container">
-      <ul class="nav-links" id="navLinks">
-      </ul>
-      <div class="nav-right">
-        <a href="#" class="download-btn">Download app</a>
-        <div class="lang-switcher">
-          <a href="#" class="active">EN</a>
-          <a href="#">FR</a>
-        </div>
-      </div>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<nav id="navbar">
+<div class="logo-container">
+<img src="./offrgrocerylogo.png" alt="OFFR Logo" class="logo">
+</div>
+<div class="nav-container">
+<ul class="nav-links" id="navLinks">
+</ul>
+<div class="nav-right">
+<a href="#" class="download-btn">Download app</a>
+<div class="lang-switcher">
+<a href="#" class="active">EN</a>
+<a href="#">FR</a>
+</div>
+</div>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<main class="hero">
+<div class="hero-content">
+<h1>
+<span>The Smart Way</span><br/>
+<span>To Shop And Save</span>
+</h1>
+<div class="contact-section" id="how-it-works">
+<h2>Join our waitlist now to stay up to date on all news!</h2>
+<!-- NOTE: No local storage; posts securely to /api/contact -->
+<form class="contact-form" id="contactForm" autocomplete="off" novalidate>
+<input type="text" name="name" placeholder="Name" class="form-input" required minlength="2"/>
+<input type="email" name="email" placeholder="Email" class="form-input" required/>
+<!-- Honeypot (bots fill this; humans won't see it) -->
+<input type="text" name="company" tabindex="-1" autocomplete="off"
+style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true"/>
+<button type="submit" class="notify-btn">Notify Me</button>
+</form>
+</div>
+</div>
+</main>
+<section class="what-is-offr" id="what-is-offr">
+<div class="what-inner">
+<h2>What is OFFR?</h2>
+<p class="lead">
+Download the app that helps you save on all your grocery needs.
+</p>
+<p>
+OFFR Grocery lets users save up to 40% from their monthly grocery spending! Make your grocery lists with OFFR and enjoy instant savings.
+</p>
+<div class="store-badges">
+<a href="#" aria-label="Download on the App Store" class="store-link">
+<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="badge app-store"/>
+</a>
+<a href="#" aria-label="Get it on Google Play" class="store-link">
+<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge google-play"/>
+</a>
+</div>
+</div>
+</section>
 
-  <main class="hero">
-    <div class="leaf leaf1"></div>
-    <div class="leaf leaf2"></div>
-    <div class="leaf leaf3"></div>
+<!-- About Section -->
+<section id="about" style="padding: 4rem 2rem; background: #E8F4E8;">
+<div class="what-inner">
+<h2>Testimonials</h2>
+<p class="lead">
+The average Canadian household spends 30% of their budget on grocery spending.
+</p>
+<p>
+By using our app, you can save up to 40% on your overall grocery bills every month.
+</p>
+<p>
+My first grocery trip OFFR helped me save $25 by providing me with full price information, before I even left the house. -Michael R.
+</p>
+</div>
+</section>
 
-    <div class="hero-content">
-      <h1>
-        <span>The Smart Way</span><br/>
-        <span>To Shop And Save</span>
-      </h1>
+<!-- Blog Section -->
+<section id="blog" style="padding: 4rem 2rem; background: #D8EBD8;">
+<div class="what-inner">
+<h2>About Us</h2>
+<p class="lead">
+Empowering the consumers to take back control over their wallets.
+</p>
+<p>
+Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.
+</p>
+<p>
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+</p>
+</div>
+</section>
 
-      <div class="contact-section" id="how-it-works">
-        <h2>Contact Us</h2>
+<!-- FAQ Section -->
+<section id="faq" style="padding: 4rem 2rem; background: #E8F4E8;">
+<div class="what-inner">
+<h2>Frequently Asked Questions</h2>
+<p class="lead">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+</p>
+<p>
+<strong>Q: Lorem ipsum dolor sit amet?</strong><br/>
+A: Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+<p>
+<strong>Q: Duis aute irure dolor in reprehenderit?</strong><br/>
+A: In voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+<strong>Q: Sed ut perspiciatis unde omnis?</strong><br/>
+A: Iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+</p>
+</div>
+</section>
 
-        <!-- NOTE: No local storage; posts securely to /api/contact -->
-        <form class="contact-form" id="contactForm" autocomplete="off" novalidate>
-          <input type="text" name="name" placeholder="Name" class="form-input" required minlength="2"/>
-          <input type="email" name="email" placeholder="Email" class="form-input" required/>
-
-          <!-- Honeypot (bots fill this; humans won’t see it) -->
-          <input type="text" name="company" tabindex="-1" autocomplete="off"
-                 style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true"/>
-
-          <button type="submit" class="notify-btn">Notify Me</button>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <section class="what-is-offr" id="what-is-offr">
-    <div class="what-inner">
-      <h2>What is Offr?</h2>
-      <p class="lead">
-        Download the app that helps you save on all your grocery needs.
-      </p>
-      <p>
-        Explore the app to find out which grocery stores have the cheapest grocery prices for your basket.
-      </p>
-      <div class="store-badges">
-        <a href="#" aria-label="Download on the App Store" class="store-link">
-          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="badge app-store"/>
-        </a>
-        <a href="#" aria-label="Get it on Google Play" class="store-link">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge google-play"/>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="height:70vh"></section>
-  <section id="blog" style="height:70vh"></section>
-  <section id="faq" style="height:70vh"></section>
-
-  <div class="chat-widget" aria-label="Open chat">
-    <div class="chat-icon">💬</div>
-  </div>
-
-  <script src="script.js" defer></script>
+<div class="chat-widget" aria-label="Open chat">
+<div class="chat-icon">💬</div>
+</div>
+<script src="script.js" defer></script>
 </body>
 </html>

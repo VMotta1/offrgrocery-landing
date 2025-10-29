@@ -169,7 +169,7 @@ document.querySelectorAll('button, .download-btn').forEach(button => {
     setTimeout(() => ripple.parentNode && ripple.remove(), 600);
   });
 });
-
+/*
 // ===== PARTICLES (LIGHT) =====
 class ParticleSystem {
   constructor() { this.particles = []; this.maxParticles = 15; this.isActive = true; }
@@ -212,7 +212,7 @@ class ParticleSystem {
   }
   stop() { this.isActive = false; this.particles.forEach(p => this.removeParticle(p)); }
 }
-
+*/
 // ===== LOGO ANIMATION =====
 function initLogoAnimation() {
   const logo = document.querySelector('.logo');
@@ -223,7 +223,7 @@ function initLogoAnimation() {
     setTimeout(() => { logo.style.transform = 'scale(1)'; }, 1000);
   }, 6000);
 }
-
+/*
 // ===== FLOATING ELEMENTS =====
 function createFloatingElement() {
   if (document.querySelectorAll('[data-floating]').length >= 8) return;
@@ -238,7 +238,7 @@ function createFloatingElement() {
   document.body.appendChild(el);
   setTimeout(() => el.parentNode && el.parentNode.removeChild(el), 20000);
 }
-
+*/
 // ===== UTILITIES =====
 function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function() {
       @keyframes ripple { to { transform: scale(2); opacity: 0; } }
       .notification { animation: slideIn 0.3s ease; }
       @keyframes slideIn { from { transform: translateX(400px); } to { transform: translateX(0); } }
-      @keyframes floatUp { from { transform: translateY(0) rotate(0); opacity:1; } to { transform: translateY(-100vh) rotate(360deg); opacity:0; } }
     `;
     document.head.appendChild(style);
   }
@@ -288,6 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
       navContainer.style.transform = 'translateY(0)';
     }, 300);
   }
+
+  /*
 
   const particleSystem = new ParticleSystem();
   const hasGoodPerformance = (window.navigator.hardwareConcurrency || 4) > 2;
@@ -316,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     requestAnimationFrame(checkPerformance);
   }
-
+*/
   // Welcome toast
   setTimeout(() => showNotification('Welcome to OFFR! 🎉', 'success'), 2000);
 });
