@@ -124,6 +124,12 @@ document.querySelector('.chat-widget').addEventListener('click', () => {
   showNotification('Chat feature coming soon! Contact us at help@offr.com', 'info');
 });
 
+// ===== FEEDBACK LINK =====
+document.getElementById('feedbackLink').addEventListener('click', (e) => {
+  e.preventDefault();
+  showNotification('Feedback form coming soon! Email us at help@offr.com', 'info');
+});
+
 // ===== HOVER EFFECTS =====
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('mouseenter', function() {
@@ -169,50 +175,7 @@ document.querySelectorAll('button, .download-btn').forEach(button => {
     setTimeout(() => ripple.parentNode && ripple.remove(), 600);
   });
 });
-/*
-// ===== PARTICLES (LIGHT) =====
-class ParticleSystem {
-  constructor() { this.particles = []; this.maxParticles = 15; this.isActive = true; }
-  createParticle() {
-    if (this.particles.length >= this.maxParticles) return;
-    const particle = document.createElement('div');
-    const size = Math.random() * 4 + 2;
-    const x = Math.random() * window.innerWidth;
-    const duration = Math.random() * 3000 + 2000;
 
-    particle.style.cssText = `
-      position: fixed; width: ${size}px; height: ${size}px; background: rgba(154,205,50,0.6);
-      border-radius: 50%; left: ${x}px; top: -10px; pointer-events: none; z-index: 1; transition: opacity 0.3s ease;
-    `;
-    document.body.appendChild(particle);
-    this.particles.push(particle);
-
-    const animation = particle.animate(
-      [
-        { transform: 'translateY(-10px)', opacity: 0 },
-        { transform: 'translateY(30vh)', opacity: 1 },
-        { transform: `translateY(${window.innerHeight + 10}px)`, opacity: 0 }
-      ],
-      { duration, easing: 'ease-out' }
-    );
-    animation.onfinish = () => this.removeParticle(particle);
-  }
-  removeParticle(p) {
-    const i = this.particles.indexOf(p);
-    if (i > -1) this.particles.splice(i, 1);
-    p.parentNode && p.parentNode.removeChild(p);
-  }
-  start() {
-    const tick = () => {
-      if (!this.isActive) return;
-      this.createParticle();
-      setTimeout(tick, Math.random() * 3000 + 2000);
-    };
-    tick();
-  }
-  stop() { this.isActive = false; this.particles.forEach(p => this.removeParticle(p)); }
-}
-*/
 // ===== LOGO ANIMATION =====
 function initLogoAnimation() {
   const logo = document.querySelector('.logo');
@@ -223,22 +186,7 @@ function initLogoAnimation() {
     setTimeout(() => { logo.style.transform = 'scale(1)'; }, 1000);
   }, 6000);
 }
-/*
-// ===== FLOATING ELEMENTS =====
-function createFloatingElement() {
-  if (document.querySelectorAll('[data-floating]').length >= 8) return;
-  const el = document.createElement('div');
-  el.setAttribute('data-floating', 'true');
-  el.style.cssText = `
-    position: absolute; width: ${Math.random() * 15 + 8}px; height: ${Math.random() * 15 + 8}px;
-    background: rgba(154,205,50,${Math.random() * 0.2 + 0.05}); border-radius: 50%;
-    left: ${Math.random() * 100}vw; top: 100vh; pointer-events: none; z-index: 1;
-    animation: floatUp ${Math.random() * 8 + 12}s linear infinite;
-  `;
-  document.body.appendChild(el);
-  setTimeout(() => el.parentNode && el.parentNode.removeChild(el), 20000);
-}
-*/
+
 // ===== UTILITIES =====
 function isValidEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
 
@@ -288,36 +236,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
   }
 
-  /*
-
-  const particleSystem = new ParticleSystem();
-  const hasGoodPerformance = (window.navigator.hardwareConcurrency || 4) > 2;
-
-  if (hasGoodPerformance) {
-    particleSystem.start();
-    initLogoAnimation();
-    setInterval(createFloatingElement, 4000);
-    for (let i = 0; i < 3; i++) setTimeout(createFloatingElement, i * 1500);
-  }
-
-  // Performance watchdog
-  if (hasGoodPerformance) {
-    let frameCount = 0;
-    let lastTime = performance.now();
-    const checkPerformance = () => {
-      frameCount++;
-      const now = performance.now();
-      if (now - lastTime >= 1000) {
-        const fps = Math.round((frameCount * 1000) / (now - lastTime));
-        if (fps < 30) particleSystem.stop();
-        frameCount = 0;
-        lastTime = now;
-      }
-      requestAnimationFrame(checkPerformance);
-    };
-    requestAnimationFrame(checkPerformance);
-  }
-*/
   // Welcome toast
   setTimeout(() => showNotification('Welcome to OFFR! 🎉', 'success'), 2000);
 });
@@ -326,4 +244,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('beforeunload', () => {
   document.querySelectorAll('[data-floating]').forEach(el => el.remove());
 });
-// redeploy

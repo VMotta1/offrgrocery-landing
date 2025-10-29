@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <link rel="stylesheet" href="styles.css"/>
 <link rel="icon" type="image/png" href="./offrlogo.png" />
 </head>
@@ -20,6 +21,11 @@
 </ul>
 <div class="nav-right">
 <a href="#" class="download-btn">Download app</a>
+<div class="social-links">
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+</div>
 <div class="lang-switcher">
 <a href="#" class="active">EN</a>
 <a href="#">FR</a>
@@ -30,6 +36,7 @@
 </button>
 </div>
 </nav>
+
 <main class="hero">
 <div class="hero-content">
 <h1>
@@ -38,11 +45,9 @@
 </h1>
 <div class="contact-section" id="how-it-works">
 <h2>Join our waitlist now to stay up to date on all news!</h2>
-<!-- NOTE: No local storage; posts securely to /api/contact -->
 <form class="contact-form" id="contactForm" autocomplete="off" novalidate>
 <input type="text" name="name" placeholder="Name" class="form-input" required minlength="2"/>
 <input type="email" name="email" placeholder="Email" class="form-input" required/>
-<!-- Honeypot (bots fill this; humans won't see it) -->
 <input type="text" name="company" tabindex="-1" autocomplete="off"
 style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true"/>
 <button type="submit" class="notify-btn">Notify Me</button>
@@ -50,6 +55,7 @@ style="position:absolute;left:-9999px;opacity:0;" aria-hidden="true"/>
 </div>
 </div>
 </main>
+
 <section class="what-is-offr" id="what-is-offr">
 <div class="what-inner">
 <h2>What is OFFR?</h2>
@@ -70,7 +76,6 @@ OFFR Grocery lets users save up to 40% from their monthly grocery spending! Make
 </div>
 </section>
 
-<!-- About Section -->
 <section id="about" style="padding: 4rem 2rem; background: #E8F4E8;">
 <div class="what-inner">
 <h2>Testimonials</h2>
@@ -86,7 +91,6 @@ My first grocery trip OFFR helped me save $25 by providing me with full price in
 </div>
 </section>
 
-<!-- Blog Section -->
 <section id="blog" style="padding: 4rem 2rem; background: #D8EBD8;">
 <div class="what-inner">
 <h2>About Us</h2>
@@ -102,8 +106,7 @@ Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saep
 </div>
 </section>
 
-<!-- FAQ Section -->
-<section id="faq" style="padding: 4rem 2rem; background: #E8F4E8;">
+<section id="faq" style="padding: 4rem 2rem 4rem; background: #E8F4E8;">
 <div class="what-inner">
 <h2>Frequently Asked Questions</h2>
 <p class="lead">
@@ -124,9 +127,54 @@ A: Iste natus error sit voluptatem accusantium doloremque laudantium, totam rem 
 </div>
 </section>
 
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#hero">The Smart Way To Shop And Save</a></li>
+<li><a href="#what-is-offr">What is OFFR?</a></li>
+<li><a href="#about">Testimonials</a></li>
+<li><a href="#blog">About Us</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Download Our App</h3>
+<div class="store-badges">
+<a href="#" aria-label="Download on the App Store" class="store-link">
+<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="badge app-store"/>
+</a>
+<a href="#" aria-label="Get it on Google Play" class="store-link">
+<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge google-play"/>
+</a>
+</div>
+</div>
+<div class="footer-section">
+<h3>Contact Us</h3>
+<ul>
+<li><a href="mailto:help@offr.com">help@offr.com</a></li>
+<li><a href="#" id="feedbackLink">Send Feedback</a></li>
+</ul>
+<h3 style="margin-top: 1.5rem;">Follow Us</h3>
+<div class="footer-social">
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+<a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 OFFR. All rights reserved.</p>
+</div>
+</footer>
+
 <div class="chat-widget" aria-label="Open chat">
 <div class="chat-icon">💬</div>
 </div>
+
 <script src="script.js" defer></script>
 </body>
 </html>
