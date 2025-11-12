@@ -119,10 +119,53 @@ document.querySelectorAll('.lang-switcher a').forEach(langLink => {
   });
 });
 
-// ===== CHAT WIDGET =====
-document.querySelector('.chat-widget').addEventListener('click', () => {
-  showNotification('Chat feature coming soon! Contact us at help@offr.com', 'info');
+const chatWidget = document.querySelector('.chat-widget');
+const chatPopup = document.getElementById('chatPopup');
+const chatMessages = document.getElementById('chatMessages');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatCloseBtn = document.getElementById('chatCloseBtn');
+let hasWelcomed = false;
+
+function appendChatMessage(sender, text) {
+  if (!chatMessages) return;
+  const bubble = document.createElement('div');
+  bubble.className = `chat-bubble ${sender}`;
+  bubble.textContent = text;
+  chatMessages.appendChild(bubble);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function openChat(includeGreeting = false) {
+  if (!chatPopup) return;
+  chatPopup.classList.add('open');
+  chatPopup.setAttribute('aria-hidden', 'false');
+  if (includeGreeting && !hasWelcomed) {
+    appendChatMessage('bot', 'Welcome to OFFR! How can we help you today?');
+    hasWelcomed = true;
+  }
+}
+
+function closeChat() {
+  if (!chatPopup) return;
+  chatPopup.classList.remove('open');
+  chatPopup.setAttribute('aria-hidden', 'true');
+}
+
+chatWidget?.addEventListener('click', () => {
+  if (chatPopup?.classList.contains('open')) closeChat();
+  else openChat(true);
 });
+chatCloseBtn?.addEventListener('click', closeChat);
+chatForm?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const message = chatInput.value.trim();
+  if (!message) return;
+  appendChatMessage('user', message);
+  chatInput.value = '';
+  setTimeout(() => appendChatMessage('bot', 'Thanks for reaching out! Our team will follow up via help@offr.com.'), 600);
+});
+
 
 // ===== FEEDBACK LINK =====
 document.getElementById('feedbackLink').addEventListener('click', (e) => {
@@ -236,8 +279,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
   }
 
-  // Welcome toast
-  setTimeout(() => showNotification('Welcome to OFFR! 🎉', 'success'), 2000);
+  // Welcome chat instead of toast
+  setTimeout(() => openChat(true), 2000);
+
 });
 
 // Cleanup
