@@ -163,14 +163,14 @@ chatForm?.addEventListener('submit', (e) => {
   if (!message) return;
   appendChatMessage('user', message);
   chatInput.value = '';
-  setTimeout(() => appendChatMessage('bot', 'Thanks for reaching out! Our team will follow up via help@GoCerise.com.'), 600);
+  setTimeout(() => appendChatMessage('bot', 'Thanks for reaching out! Our team will follow up via help@gocerise.com.'), 600);
 });
 
 
 // ===== FEEDBACK LINK =====
 document.getElementById('feedbackLink').addEventListener('click', (e) => {
   e.preventDefault();
-  showNotification('Feedback form coming soon! Email us at help@GoCerise.com', 'info');
+  showNotification('Feedback form coming soon! Email us at help@gocerise.com', 'info');
 });
 
 // ===== HOVER EFFECTS =====
