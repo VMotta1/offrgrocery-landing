@@ -66,14 +66,14 @@ nav.scrolled .nav-links a { color: var(--cornsilk); }
 .logo-container {
   position: absolute;
   left: 50%;
-  top: 75%;
+  top: 55%;
   transform: translate(-50%, -50%);
 }
 
 .logo {
-  height: 320px;
+  height: 65px;
   width: auto;
-  filter: brightness(0) invert(1); /* makes logo white on dark nav */
+
 }
 nav.scrolled .logo {
   filter: brightness(0) invert(1);
