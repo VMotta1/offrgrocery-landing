@@ -2,12 +2,12 @@
 
 :root {
   /* Updated palette */
-  --apple-green: #ACB700;     /* Lime Moss */
+  --apple-green: #6A8E24;     /* Lime Moss ACB700 */
   --straw: #CFE25A;           /* Greener highlight */
-  --cornsilk: #FFF1D6;        /* Papaya Whip */
-  --carmine: #7A0000;         /* Molten Lava */
+  --cornsilk: #FFFBF0;        /* Papaya Whip FFF1D6*/
+  --carmine: #C01B36;         /* Molten Lava 7A0000*/
   --carmine-hover: #4C0600;   /* Rich Mahogany */
-  --ink: #1E0B0D;             /* Coffee Bean */
+  --ink: #343434;             /* Coffee Bean 1E0B0D*/
   --ink-muted: rgba(30, 11, 13, 0.72);
 
   /* Shadow helpers */
